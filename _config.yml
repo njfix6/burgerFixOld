@@ -70,4 +70,4 @@ theme: burgerFixTheme
 deploy:
   type: git
   repo: https://github.com/njfix6/burgerFixDeploy.git
-  branch: deploy
+  branch: master
