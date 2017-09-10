@@ -1,22 +1,26 @@
-<div class="blog-post">
-
+<div class="blog-post" id="<%- item.key %>">
+  <!-- <div class="small-circle main-circle"><%- item.burger + item.atmosphere +  item.burger + item.fries + item.sauce %></div> -->
     <!-- Title -->
-    <h2 class="blog-post-title">
-        <a href="<%- config.root %><%- item.path %>">
-            <%- item.title %>
-        </a>
-    </h2>
+    <div class="titleDate">
+      <h2 class="blog-post-title" >
+          <a href="<%- config.root %><%- item.path %>">
+              <%- item.title %>
+          </a>
+      </h2>
+      <div class="previewImageDisplay">
+        <img class="previewImage" src="<%- item.mainImg %>">
+      </div>
+      <p class="blog-post-meta">
+          <%= item.date.format(config.date_format) %>
+      </p>
+    </div>
+
 
     <!-- Date and Author -->
-    <p class="blog-post-meta">
-        <%= item.date.format(config.date_format) %>
-        <% if(item.author) { %>
-            by <%- item.author %>
-        <% } %>
-    </p>
+
 
     <!-- Content -->
-    <%- item.excerpt || item.content %>
+    <!-- <%- item.excerpt || item.content %> -->
 
     <!-- Only display the Read More link if we are displaying an excerpt -->
     <% if(item.excerpt) { %>

@@ -1,10 +1,28 @@
 <div class='row'>
-    <a class='btn btn-default' href='/'>< Home</a>
-</div>
-<div class='row'>
-    <h1><%- page.title %></h1>
-    <div class='text-muted'>
-        <%= date(page.date, config.date_format) %>
+    <div class="titleAndDate">
+      <h1 class='postTitle'><%- page.title %></h1>
+      <div class='text-muted date'>
+          <%= date(page.date, config.date_format) %>
+      </div>
+    </div>
+    <div class="circle rating center"><%- page.burger + page.atmosphere +  page.burger + page.fries + page.sauce %></div>
+    <div class='row small-rating'>
+      <% if(page.burger ) { %>
+          <div class="small-circle"><%- page.burger  %></div>
+      <% } %>
+      <% if(page.atmosphere ) { %>
+          <div class="small-circle"><%- page.atmosphere  %></div>
+      <% } %>
+      <% if(page.burger ) { %>
+          <div class="small-circle"><%- page.burger  %></div>
+      <% } %>
+      <% if(page.fries ) { %>
+          <div class="small-circle"><%- page.fries  %></div>
+      <% } %>
+      <% if(page.sauce ) { %>
+          <div class="small-circle"><%- page.sauce  %></div>
+      <% } %>
     </div>
     <%- page.content %>
 </div>
+<!-- <a class='btn btn-default' href='/'>< Home</a> -->

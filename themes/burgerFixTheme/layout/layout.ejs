@@ -6,28 +6,22 @@
 <body>
     <!-- Menu -->
     <%- partial('_partial/menu') %>
+    <div class="row main-body">
+        <% if (page.path.indexOf('blog') > -1) { %>
+          <%- partial('_partial/blog') %>
+        <% } else if (page.path.indexOf('articles') > -1) { %>
+          <%- partial('_partial/articles') %>
+        <% } else if (page.path.indexOf('places') > -1) { %>
+          <%- partial('_partial/places') %>
+        <% } else if (page.path.indexOf('b-roll') > -1) { %>
+          <%- partial('_partial/b-roll') %>
+        <% } else { %>
+          <%- body %>
+        <% } %>
 
-    <div class="container">
-        <!-- Blog Header: title and subtitle -->
-        <%- partial('_partial/header') %>
-
-        <div class="row">
-
-            <!-- Main Content -->
-            <div class="col-sm-8 blog-main">
-                <%- body %>
-            </div>
-
-            <!-- Sidebar -->
-            <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
-                <%- partial('_partial/sidebar') %>
-            </div>
-        </div>
     </div>
-
     <!-- Footer -->
     <%- partial('_partial/footer') %>
-
     <!-- After footer scripts -->
     <%- partial('_partial/after-footer') %>
 </body>

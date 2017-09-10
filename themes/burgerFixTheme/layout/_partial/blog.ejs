@@ -1,0 +1,9 @@
+
+
+<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 blog-main">
+  <% site.posts.each(function(item){ %>
+      <%- partial('_partial/article-excerpt', {item: item}) %>
+  <% }); %>
+</div>
+
+<%- partial('_partial/pagination') %>
